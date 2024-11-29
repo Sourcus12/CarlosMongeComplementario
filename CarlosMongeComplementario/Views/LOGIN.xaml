@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CarlosMongeComplementario.Views.LOGIN"
+             Title="LOGIN">
+    <VerticalStackLayout>
+        <Label 
+            Text="Inicio de sesión"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Image 
+            Source="https://revista.uisrael.edu.ec/images/uisrael.png"
+            WidthRequest="250"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Image
+            Source="ecuador.png"
+            WidthRequest="250"
+            VerticalOptions="Center"
+            HorizontalOptions="Center" />
+
+        <Entry x:Name="txtUusuario"
+                Placeholder="Ingrese el usuario" />
+        <Entry x:Name="txtContrasena"
+                Placeholder="Ingrese la contraseña"
+                IsPassword="True" />
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="btnIniciar"
+                    Text="Iniciar Sesión"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Clicked="btnIniciar_Clicked"/>
+
+            
+                <Button x:Name="btnSensor"
+                    Text="Sensor"
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Clicked="CapturePhotoButton_Clicked"/>
+            <Image x:Name="EvidenceImage" HeightRequest="200" HorizontalOptions="Center" />
+            
+
+        </Grid>
+
+    </VerticalStackLayout>
+</ContentPage>

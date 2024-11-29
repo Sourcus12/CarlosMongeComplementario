@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CarlosMongeComplementario.Views.ESTUDIANTE"
+             Title="ESTUDIANTE">
+    <VerticalStackLayout Padding="20" Spacing="10">
+        <!-- Formulario -->
+        <Entry x:Name="NombreEntry" Placeholder="Nombre" />
+        <Entry x:Name="ApellidoEntry" Placeholder="Apellido" />
+        <Entry x:Name="CursoEntry" Placeholder="Curso" />
+        <Entry x:Name="ParaleloEntry" Placeholder="Paralelo" />
+        <Entry x:Name="NotaFinalEntry" Placeholder="Nota Final" Keyboard="Numeric" />
+        <Button Text="Guardar" Clicked="OnGuardarClicked" />
+
+
+        <CollectionView x:Name="EstudiantesListView" SelectionMode="Single" SelectionChanged="OnEstudianteSelected">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="10" ColumnDefinitions="*,*,*,*,*" >
+                        <Label Text="{Binding Nombre}" Grid.Column="0" />
+                        <Label Text="{Binding Apellido}" Grid.Column="1" />
+                        <Label Text="{Binding Curso}" Grid.Column="2" />
+                        <Label Text="{Binding Paralelo}" Grid.Column="3" />
+                        <Label Text="{Binding NOTA_FINAL}" Grid.Column="4" />
+                        
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        
+        <Button Text="Eliminar" Clicked="OnEliminarClicked" />
+    </VerticalStackLayout>
+</ContentPage>
